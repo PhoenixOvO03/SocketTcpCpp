@@ -3,6 +3,7 @@
 #include<iostream>
 
 #include"../SocketInit/SocketInit.hpp"
+#include"../Message/msgType.hpp"
 
 ////多线程实现多客户端
 //DWORD WINAPI ThreadProc(LPVOID lp) {
@@ -23,6 +24,40 @@
 //
 //	return NULL;
 //}
+
+//处理客户端发来的消息
+void dealWithData(MsgHead * msgHead) {
+	switch (msgHead->msgType) {
+
+	case MSG_SHOW:
+		std::cout << "请求聊天室" << std::endl;
+		break;
+
+	case MSG_JOIN:{
+		MsgJoin* msgJoin = (MsgJoin*)msgHead;
+		std::cout << "加入聊天室" << msgJoin->roomID << "聊天室" << std::endl;
+		break;
+	}
+
+	case MSG_CREATE:
+		std::cout << "请求创建聊天室" << std::endl;
+		break;
+
+	case MSG_ISTALK: {
+		MsgIsTalk * msgIsTalk = (MsgIsTalk*)msgHead;
+		std::cout << msgIsTalk->getBuff() << std::endl;
+		break;
+	}
+
+	case MSG_LEAVE:
+		std::cout << "离开聊天" << std::endl;
+		break;
+
+	default:
+		std::cout << "消息解析失败" << std::endl;
+		break;
+	}
+}
 
 int main() {
 	SocketInit socketInit;
@@ -94,7 +129,8 @@ int main() {
 				char buff[1024] = { 0 };
 				int result = recv(fd_tmp.fd_array[i], buff, sizeof(buff), 0);
 				if (result > 0) {
-					std::cout << buff << std::endl;
+					//std::cout << buff << std::endl;
+					dealWithData((MsgHead*)buff);
 				}
 				else
 				{
