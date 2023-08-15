@@ -49,7 +49,6 @@ void TcpServer::Onselect() {
 
 			if (sClient == SOCKET_ERROR) {
 				std::cout << "接受客户端失败" << std::endl;
-				closesocket(sLiten);
 				continue;
 			}
 
