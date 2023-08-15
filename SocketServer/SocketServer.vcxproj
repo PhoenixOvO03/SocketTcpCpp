@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClInclude Include="..\Message\msgType.hpp" />
     <ClInclude Include="..\SocketInit\SocketInit.hpp" />
+    <ClInclude Include="TcpServer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ServerMain.cpp" />
+    <ClCompile Include="TcpServer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
