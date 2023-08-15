@@ -45,7 +45,7 @@ void dealWithData(MsgHead * msgHead) {
 
 	case MSG_ISTALK: {
 		MsgIsTalk * msgIsTalk = (MsgIsTalk*)msgHead;
-		std::cout << msgIsTalk->getBuff() << std::endl;
+		std::cout << msgIsTalk->getBuff() << "..." << std::endl;
 		break;
 	}
 
