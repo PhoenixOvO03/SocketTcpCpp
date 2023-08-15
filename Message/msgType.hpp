@@ -41,7 +41,7 @@ public:
 
 class MsgIsTalk :public MsgHead {
 private:
-	char buff[512];
+	char buff[1000];
 public:
 	MsgIsTalk() {
 		msgType = MSG_ISTALK;
