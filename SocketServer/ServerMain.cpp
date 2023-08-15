@@ -54,7 +54,7 @@ void dealWithData(MsgHead * msgHead) {
 		break;
 
 	default:
-		std::cout << "消息解析失败" << std::endl;
+		std::cout << "消息解析失败" << msgHead->msgType << std::endl;
 		break;
 	}
 }

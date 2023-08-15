@@ -73,7 +73,5 @@ int main() {
 
 	WaitForSingleObject(h, INFINITE);
 
-	
-
 	return 0;
 }

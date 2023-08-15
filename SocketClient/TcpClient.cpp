@@ -35,7 +35,7 @@ void TcpClient::RecvData() {
 
 //·¢ËÍÊý¾Ý
 void TcpClient::SendData(MsgHead* msgHead) {
-	send(sClient, (const char*)&msgHead, msgHead->datalen, 0);
+	send(sClient, (const char*)msgHead, msgHead->datalen, 0);
 }
 
 TcpClient::TcpClient() {
