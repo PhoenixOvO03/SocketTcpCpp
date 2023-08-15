@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Message\msgType.hpp" />
     <ClInclude Include="..\SocketInit\SocketInit.hpp" />
   </ItemGroup>
   <ItemGroup>
