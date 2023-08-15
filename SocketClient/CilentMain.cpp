@@ -6,7 +6,7 @@ DWORD WINAPI TreadProc(LPVOID lp) {
 
 	while (true) {
 		std::cout << "show join create talk exit" << std::endl;
-
+		
 		char buff[1024] = { 0 };
 		gets_s(buff, sizeof(buff));
 
@@ -29,7 +29,8 @@ DWORD WINAPI TreadProc(LPVOID lp) {
 			MsgIsTalk msgIsTalk;
 
 			while (true) {
-				gets_s(msgIsTalk.getBuff(), sizeof(msgIsTalk.getBuff()));
+				//gets_s(msgIsTalk.getBuff(), sizeof(msgIsTalk.getBuff()));
+				std::cin >> msgIsTalk.getBuff();
 
 				if (strcmp(msgIsTalk.getBuff(), "leave") == 0) {
 					std::cout << "½áÊøÁÄÌì" << std::endl;
