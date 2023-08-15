@@ -1,6 +1,3 @@
-#include<iostream>
-#include <string>
-
 #include"TcpClient.h"
 
 //Ö¸ÁîÏß³Ì

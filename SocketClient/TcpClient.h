@@ -1,6 +1,9 @@
 #pragma once
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
+#include<iostream>
+#include <string>
+
 #include"../SocketInit/SocketInit.hpp"
 #include"../Message/msgType.hpp"
 
