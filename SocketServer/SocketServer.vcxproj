@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClInclude Include="..\Message\msgType.hpp" />
     <ClInclude Include="..\SocketInit\SocketInit.hpp" />
+    <ClInclude Include="ClientObject.h" />
     <ClInclude Include="TcpServer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClientObject.cpp" />
     <ClCompile Include="ServerMain.cpp" />
     <ClCompile Include="TcpServer.cpp" />
   </ItemGroup>

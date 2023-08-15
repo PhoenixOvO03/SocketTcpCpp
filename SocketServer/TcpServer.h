@@ -3,14 +3,17 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
 #include<iostream>
+#include<vector>
 
 #include"../SocketInit/SocketInit.hpp"
 #include"../Message/msgType.hpp"
+#include"ClientObject.h"
 
 class TcpServer {
 	SocketInit socketInit;//初始化
 	SOCKET sLiten;//服务器套接字
 	FD_SET fd_read;//存储SOCKET对象
+	std::vector<ClientObject*> m_vecClient;
 
 public:
 	void BindServer(unsigned short port);//绑定套接字

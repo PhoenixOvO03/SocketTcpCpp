@@ -53,6 +53,10 @@ void TcpServer::Onselect() {
 			}
 
 			std::cout << "与客户端建立连接" << inet_ntoa(clientAddr.sin_addr) << std::endl;
+			
+			ClientObject* pcb = new ClientObject;
+			pcb->setSocket(sClient);
+			m_vecClient.push_back(pcb);
 
 			FD_SET(sClient, &fd_read);//客户端加入监听
 		}
@@ -128,4 +132,10 @@ TcpServer::TcpServer() {
 
 TcpServer::~TcpServer() {
 	closesocket(sLiten);//关闭监听
+
+	//清空客户端数据
+	for (int i = 0; i < m_vecClient.size(); ++i) {
+		delete m_vecClient[i];
+	}
+	m_vecClient.clear();
 }
