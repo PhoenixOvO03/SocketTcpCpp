@@ -1,5 +1,4 @@
 #pragma once
-
 enum MSG_TYPE {
 	MSG_SHOW,
 	MSG_JOIN,
