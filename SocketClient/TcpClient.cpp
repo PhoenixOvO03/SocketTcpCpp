@@ -38,6 +38,11 @@ void TcpClient::SendData(MsgHead* msgHead) {
 	send(sClient, (const char*)msgHead, msgHead->datalen, 0);
 }
 
+//获取客户端套接字
+SOCKET TcpClient::getSocket() {
+	return sClient;
+}
+
 TcpClient::TcpClient() {
 	//初始化客户端套接字
 	sClient = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);//ipv4，流式套接字，协议

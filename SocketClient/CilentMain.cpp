@@ -65,9 +65,7 @@ int main() {
 	HANDLE h = CreateThread(0, 0, TreadProc, (LPVOID)&tcpClient, 0, 0);
 
 	//ЪеЪ§Он
-	while (true) {
-		tcpClient.RecvData();
-	}
+	
 
 	WaitForSingleObject(h, INFINITE);
 
